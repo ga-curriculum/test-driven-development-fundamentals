@@ -83,7 +83,7 @@ from mock_db import TRACKING_DATA
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory=".", html=True), name="static")
+app.mount("/static", StaticFiles(directory=".", html=True), name="static")
 
 @app.get("/track/{tracking_number}")
 def track_package(tracking_number: str):

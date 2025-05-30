@@ -52,15 +52,17 @@ Create a new Python file called: 📄 `test_tracker.py`
 ### Step 2: Write your first unit test
 
 ```python
-from main import lookup_tracking_number
+import pytest
+from fastapi import HTTPException
+from main import track_package
 
 def test_valid_tracking_number_returns_status():
     # Arrange
     tracking_number = "USA999"
     # Act
-    result = lookup_tracking_number(tracking_number)
+    result = track_package(tracking_number)
     # Assert
-    assert result == "Delivered - New York"
+    assert result == {"status": "Delivered - New York"}
 ```
 
 > We can verify the correct data response by looking at the `mock_db.py` file.
@@ -68,13 +70,14 @@ def test_valid_tracking_number_returns_status():
 ### Step 3: Add another test for a missing number
 
 ```python
-def test_invalid_tracking_number_returns_error_message():
+def test_invalid_tracking_number_raises_http_exception():
     # Arrange
     tracking_number = "ZZZ999"
-    # Act
-    result = lookup_tracking_number(tracking_number)
-    # Assert
-    assert result == "Tracking number not found."
+    # Act & Assert
+    with pytest.raises(HTTPException) as exc_info:
+        track_package(tracking_number)
+    assert exc_info.value.status_code == 404
+    assert exc_info.value.detail == "Tracking number not found."
 ```
 
 ### Step 4: Run your tests
@@ -82,7 +85,7 @@ def test_invalid_tracking_number_returns_error_message():
 With pytest installed, run:
 
 ```bash
-pytest
+pytest test_tracker.py
 ```
 
 ✅ You should see two passing tests.

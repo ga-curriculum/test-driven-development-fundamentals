@@ -41,7 +41,7 @@ from mock_db import TRACKING_DATA
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory=".", html=True), name="static")
+app.mount("/static", StaticFiles(directory=".", html=True), name="static")
 
 @app.get("/track/{tracking_number}")
 def track_package(tracking_number: str):
@@ -53,7 +53,7 @@ def track_package(tracking_number: str):
 
 We want to verify:
 
-- A POST request to `/track` with a known tracking number returns the correct status
+- A `GET` request to `/track` with a known tracking number returns the correct status
 - The endpoint behaves correctly with unknown values
 
 <div class="activity guided-walkthrough">
@@ -69,7 +69,7 @@ You should already have:
 
 - A FastAPI app
 - A static `mock_db` file (simulated database)
-- A `/track` POST endpoint
+- A `/track` `GET` endpoint
 
 ```python
 from fastapi import FastAPI, HTTPException
@@ -79,7 +79,7 @@ from mock_db import TRACKING_DATA
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory=".", html=True), name="static")
+app.mount("/static", StaticFiles(directory=".", html=True), name="static")
 
 @app.get("/track/{tracking_number}")
 def track_package(tracking_number: str):
@@ -102,26 +102,26 @@ from main import app
 client = TestClient(app)
 
 def test_valid_number():
-    response = client.post("/track", data={"tracking_number": "GB789"})
+    response = client.get("/track/GB789")
     assert response.status_code == 200
-    assert "Customs clearance - UK" in response.text
+    assert response.json() == {"status": "Customs clearance - UK"}
 ```
 
 ### Step 3: Add another test for an invalid number
 
 ```python
-def test_invalid_number_returns_fallback():
-    response = client.post("/track", data={"tracking_number": "BAD999"})
-    assert response.status_code == 200
-    assert "Tracking number not found." in response.text
+def test_invalid_number_returns_404():
+    response = client.get("/track/BAD999")
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Tracking number not found."
 ```
 
 ### Step 4: Run your integration tests
 
 Activate your virtual environment and run:
 
-```
-pytest
+```bash
+pytest test_main.py
 ```
 
 ️✅ You should see both tests pass. If not, check for typos or case mismatches.
@@ -129,7 +129,7 @@ pytest
 ## Recap
 
 - Integration tests confirm that different parts of your app (HTML form, FastAPI route, and logic) work together
-- You used `TestClient` to simulate a browser POST request
+- You used `TestClient` to simulate a browser `GET` request
 - You wrote clear assertions against the real HTML returned by the app
 
 <div class="activity knowledge-check">

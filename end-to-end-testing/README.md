@@ -69,7 +69,7 @@ from mock_db import TRACKING_DATA
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory=".", html=True), name="static")
+app.mount("/static", StaticFiles(directory=".", html=True), name="static")
 
 @app.get("/track/{tracking_number}")
 def track_package(tracking_number: str):
@@ -105,7 +105,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def test_track_package():
     driver = webdriver.Chrome()
     try:
-        driver.get("file:///Users/username/path/to/tracking.html") # Replace with the full absolute path to your local HTML file
+        driver.get("http://localhost:8000/static/tracking.html")
 
         # Enter tracking number
         search_box = driver.find_element(By.ID, "tracking-number")
@@ -129,7 +129,7 @@ def test_track_package():
 
 3. **Run the test**
 
-From your terminal, run:
+Ina separate terminal window, run:
 
 ```bash
 pytest test_track_e2e.py
