@@ -9,23 +9,37 @@ setup = new Template.Microlesson {
   videoUrl = ""
 }
 
-concepts = new Template.Microlesson {
-  friendlyName = "Concepts"
-  dirName = "concepts"
+understandingTestDrivenDevelopment = new Template.Microlesson {
+  friendlyName = "Understanding Test-Driven Development"
+  dirName = "understanding-test-driven-development"
   type = "Content"
   videoUrl = ""
 }
 
-microlesson01 = new Template.Microlesson {
-  friendlyName = "Microlesson 01"
-  dirName = "microlesson-01"
+creatingEffectiveUnitTests = new Template.Microlesson {
+  friendlyName = "Creating Effective Unit Tests"
+  dirName = "creating-effective-unit-tests"
   type = "Content"
   videoUrl = ""
 }
 
-microlesson02 = new Template.Microlesson {
-  friendlyName = "Microlesson 02"
-  dirName = "microlesson-02"
+implementingIntegrationTests = new Template.Microlesson {
+  friendlyName = "Implementing Integration Tests"
+  dirName = "implementing-integration-tests"
+  type = "Content"
+  videoUrl = ""
+}
+
+endToEndTesting = new Template.Microlesson {
+  friendlyName = "End-to-End Testing"
+  dirName = "end-to-end-testing"
+  type = "Content"
+  videoUrl = ""
+}
+
+comparingTestingStrategies = new Template.Microlesson {
+  friendlyName = "Comparing Testing Strategies"
+  dirName = "comparing-testing-strategies"
   type = "Content"
   videoUrl = ""
 }

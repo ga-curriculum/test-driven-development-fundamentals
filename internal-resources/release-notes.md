@@ -1,5 +1,5 @@
 <h1>
-  <span class="headline">[tktk Headline]</span>
+  <span class="headline">TDD Fundamentals</span>
   <span class="subhead">Release Notes</span>
 </h1>
 
