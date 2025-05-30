@@ -5,6 +5,5 @@
 
 ## Lesson references
 
-- [tktk descriptive name of link](https://generalassemb.ly/tktk)
-- [tktk descriptive name of link](https://generalassemb.ly/tktk)
-- [tktk descriptive name of link](https://generalassemb.ly/tktk)
+- [Selenium Docs](https://www.selenium.dev/)
+- [pytest Docs](https://docs.pytest.org/en/stable/)

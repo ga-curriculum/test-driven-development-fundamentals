@@ -27,31 +27,13 @@ This module introduces the philosophy and purpose of Test-Driven Development (TD
 
 ### Prerequisites
 
-- tktk
-- tktk
-- tktk
-
-### Starter code
-
-tktk If there is not a starter code repo that students will use to start this lesson, then this section and all of its content should be removed.
-
-🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/tktk)
-
-### Solution code
-
-tktk If there is not solution code related to this module this section and all of its content should be removed.
-
-🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/tktk)
-
-### Deployed site
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](https://generalassemb.ly/tktk)
+- Understand the Testing Landscape and Tools
+- Selenium: Intro to Browser Automation
+- Selenium: Interacting with Elements
 
 ### Course landing pages
 
-- [tktk-course-acronym - tktk Course Full Name](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/test-driven-development-fundamentals/canvas-landing-pages/tktk-course-acronym.html)
+- [PTR - Python Testing & Reliability](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/test-driven-development-fundamentals/canvas-landing-pages/ptr.html)
 - [Fallback](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/test-driven-development-fundamentals/canvas-landing-pages/fallback.html)
 
 ### Resources
