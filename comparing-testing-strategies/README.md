@@ -34,9 +34,9 @@ def test_valid_tracking_number_returns_status():
     # Arrange
     tracking_number = "USA999"
     # Act
-    result = lookup_tracking_number(tracking_number)
+    result = track_package(tracking_number)
     # Assert
-    assert result == "Delivered - New York"
+    assert result == {"status": "Delivered - New York"}
 ```
 
 > 🏆 Unit tests like this give you instant feedback whether a small piece of logic works—ideal for correctness and fast iteration.
@@ -51,9 +51,9 @@ def test_valid_tracking_number_returns_status():
 
 ```python
 def test_valid_number():
-    response = client.post("/track", data={"tracking_number": "GB789"})
+    response = client.get("/track/GB789")
     assert response.status_code == 200
-    assert "Customs clearance - UK" in response.text
+    assert response.json() == {"status": "Customs clearance - UK"}
 ```
 
 > 😎 Integration tests simulate real requests, catching issues where different parts communicate—much like checking that a relay race team can pass the baton without dropping it.
@@ -70,7 +70,7 @@ def test_valid_number():
 def test_track_package():
     driver = webdriver.Chrome()
     try:
-        driver.get("file:///Users/username/path/to/tracking.html")
+        driver.get("http://localhost:8000/static/tracking.html")
         search_box = driver.find_element(By.ID, "tracking-number")
         search_box.send_keys("PKG123")
         driver.find_element(By.ID, "track-btn").click()
