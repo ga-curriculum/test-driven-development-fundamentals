@@ -33,8 +33,8 @@ This module introduces the philosophy and purpose of Test-Driven Development (TD
 
 ### Course landing pages
 
-- [PTR - Python Testing & Reliability](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/test-driven-development-fundamentals/canvas-landing-pages/ptr.html)
-- [Fallback](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/test-driven-development-fundamentals/canvas-landing-pages/fallback.html)
+- [PTR - Python Testing & Reliability](https://ga-curriculum.github.io/test-driven-development-fundamentals/canvas-landing-pages/ptr.html)
+- [Fallback](https://ga-curriculum.github.io/test-driven-development-fundamentals/canvas-landing-pages/fallback.html)
 
 ### Resources
 
@@ -46,4 +46,4 @@ This module introduces the philosophy and purpose of Test-Driven Development (TD
 
 ---
 
-**Find a 👾 bug 👾 or have suggestions? [Let us know](https://pages.git.generalassemb.ly/modular-curriculum-all-courses/universal-resources-internal/module-feedback.html)!**
+**Find a 👾 bug 👾 or have suggestions? [Let us know](https://ga-curriculum.github.io/universal-resources-internal/module-feedback.html)!**
